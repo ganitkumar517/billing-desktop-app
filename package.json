@@ -1,0 +1,74 @@
+{
+  "name": "tls-creative-studio-billing",
+  "version": "1.0.0",
+  "description": "Billing desk for Creative Studio by TLS Group",
+  "author": "Creative Studio by TLS Group",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "npm run build && electron-builder --win --x64",
+    "dist:dir": "npm run build && electron-builder --win --x64 --dir"
+  },
+  "build": {
+    "appId": "com.tlscreativestudio.billing",
+    "productName": "Creative Studio Billing",
+    "copyright": "Copyright © Creative Studio by TLS Group",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "executableName": "CreativeStudioBilling"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Creative Studio Billing",
+      "artifactName": "Creative-Studio-Billing-Setup-${version}.${ext}",
+      "uninstallDisplayName": "Creative Studio Billing"
+    }
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.13.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-redux": "^9.3.0"
+  },
+  "devDependencies": {
+    "@fontsource/bebas-neue": "^5.3.0",
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/outfit": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^44.6.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.7"
+  }
+}

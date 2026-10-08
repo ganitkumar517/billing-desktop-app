@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", "Segoe UI", sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --color-ink: #071c3b;
+  --color-paper: #f6f6f4;
+  --color-mist: #eef4f3;
+  --color-teal: #006d67;
+  --color-deep: #073532;
+  --color-sage: #b9d2cf;
+  --color-sand: #a89e82;
+  --color-mute: #5d6b78;
+  --color-line: rgba(7, 28, 59, 0.12);
+  --color-danger: #8f2d2d;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f6f6f4;
+  color: #071c3b;
+  color-scheme: light;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #006d67;
+  color: white;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 109, 103, 0.45) transparent;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
